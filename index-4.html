@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deo Filling Station — Bergaon, Hathras</title>
+<meta name="description" content="Deo Filling Station, Bergaon, Hathras. Indian Oil petrol and diesel, air machine, washroom and RO water. Open 6 AM to 10 PM. Call 9927036826.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #15140F;
+    --ink-soft: #201F18;
+    --brass: #C9A227;
+    --brass-bright: #E4C25E;
+    --oxblood: #6E2A34;
+    --cream: #F3EEE1;
+    --cream-dim: #C9C3B2;
+    --pine: #2C3A34;
+    --line: rgba(243,238,225,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--cream);
+    font-family:'Inter', sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    color:var(--cream);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  .skip-link{position:absolute;left:-999px;top:0;background:var(--brass);color:var(--ink);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;}
+
+  .rule{
+    width:56px;height:1px;
+    background:var(--brass);
+    margin:22px auto;
+  }
+  .rule.left{margin:22px 0;}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(21,20,15,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 28px;
+    gap:16px;
+  }
+  .brand{font-family:'Fraunces',serif;font-size:19px;letter-spacing:0.01em;}
+  .brand .small{display:block;font-family:'Inter',sans-serif;font-size:11px;color:var(--cream-dim);letter-spacing:0.08em;margin-top:2px;}
+  .call-now{
+    border:1px solid var(--brass);
+    color:var(--brass-bright);
+    text-decoration:none;
+    padding:9px 20px;
+    font-size:14px;
+    letter-spacing:0.03em;
+    white-space:nowrap;
+    transition:background 0.2s ease, color 0.2s ease;
+  }
+  .call-now:hover{background:var(--brass);color:var(--ink);}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    padding:110px 0 90px;
+    text-align:center;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 0%, rgba(201,162,39,0.14), transparent 70%),
+      var(--ink);
+  }
+  .hero .kicker{
+    color:var(--brass-bright);
+    font-size:14px;
+    letter-spacing:0.03em;
+    opacity:0;
+    animation:rise 0.7s ease-out 0.1s forwards;
+  }
+  .hero h1{
+    font-size:clamp(38px, 6vw, 62px);
+    line-height:1.1;
+    max-width:15ch;
+    margin:20px auto 0;
+    opacity:0;
+    animation:rise 0.8s ease-out 0.25s forwards;
+  }
+  .hero p.lede{
+    max-width:48ch;
+    margin:26px auto 0;
+    color:var(--cream-dim);
+    font-size:17px;
+    opacity:0;
+    animation:rise 0.8s ease-out 0.4s forwards;
+  }
+  @keyframes rise{
+    from{opacity:0; transform:translateY(14px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+  .hero-actions{
+    display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
+    margin-top:38px;
+    opacity:0;
+    animation:rise 0.8s ease-out 0.55s forwards;
+  }
+  .btn-gold{
+    background:var(--brass);
+    color:var(--ink);
+    text-decoration:none;
+    padding:14px 30px;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:0.02em;
+  }
+  .btn-gold:hover{background:var(--brass-bright);}
+  .btn-outline{
+    border:1px solid var(--line);
+    color:var(--cream);
+    text-decoration:none;
+    padding:13px 28px;
+    font-size:15px;
+  }
+  .btn-outline:hover{border-color:var(--cream-dim);}
+
+  .hero-meta{
+    margin-top:56px;
+    display:flex;justify-content:center;gap:48px;
+    flex-wrap:wrap;
+    opacity:0;
+    animation:rise 0.8s ease-out 0.7s forwards;
+  }
+  .hero-meta .item{text-align:center;}
+  .hero-meta .item .v{font-family:'Fraunces',serif;font-size:22px;color:var(--brass-bright);}
+  .hero-meta .item .l{font-size:13px;color:var(--cream-dim);margin-top:4px;}
+
+  /* Section shell */
+  section{padding:88px 0;}
+  .section-head{text-align:center;max-width:52ch;margin:0 auto 56px;}
+  .section-head h2{font-size:32px;}
+  .section-head p{color:var(--cream-dim);margin-top:14px;font-size:16px;}
+
+  /* Services - alternating rows */
+  .service-rows{border-top:1px solid var(--line);}
+  .service-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:48px;
+    padding:44px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .service-row:nth-child(even) .service-visual{order:2;}
+  .service-visual{
+    aspect-ratio:4/3;
+    background:linear-gradient(135deg, var(--pine), var(--ink-soft));
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid var(--line);
+  }
+  .service-visual svg{width:64px;height:64px;stroke:var(--brass-bright);}
+  .service-copy h3{font-size:24px;margin-bottom:12px;}
+  .service-copy p{color:var(--cream-dim);font-size:16px;max-width:38ch;}
+  @media (max-width:720px){
+    .service-row, .service-row:nth-child(even) .service-visual{
+      grid-template-columns:1fr;
+      order:0 !important;
+    }
+    .service-row{grid-template-columns:1fr;gap:24px;}
+    .service-visual{aspect-ratio:16/9;}
+  }
+
+  /* Timing / trust band */
+  .band{
+    background:var(--pine);
+    padding:64px 0;
+  }
+  .band-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:32px;
+  }
+  .band-block .l{color:var(--brass-bright);font-size:13px;letter-spacing:0.03em;}
+  .band-block .v{font-family:'Fraunces',serif;font-size:28px;margin-top:8px;}
+
+  /* Location */
+  .location-grid{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:44px;
+    align-items:stretch;
+  }
+  @media (max-width:760px){.location-grid{grid-template-columns:1fr;}}
+  .address-card h3{font-size:22px;margin-bottom:16px;}
+  .address-card p{color:var(--cream-dim);margin:0 0 22px;}
+  .address-card a.map-link{
+    display:inline-block;
+    color:var(--brass-bright);
+    text-decoration:none;
+    border-bottom:1px solid var(--brass-bright);
+    font-size:15px;
+  }
+  .map-embed{border:1px solid var(--line);min-height:280px;filter:grayscale(0.3) contrast(1.05);}
+  .map-embed iframe{width:100%;height:100%;min-height:280px;border:0;display:block;}
+
+  /* Contact */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .contact-card{
+    background:var(--ink);
+    padding:32px;
+  }
+  .contact-card .l{font-size:13px;color:var(--brass-bright);letter-spacing:0.02em;}
+  .contact-card .phone-link{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    text-decoration:none;
+    color:var(--cream);
+    margin-top:10px;
+    display:inline-block;
+  }
+  .contact-card .phone-link:hover{color:var(--brass-bright);}
+  .owner-line{
+    margin-top:40px;
+    text-align:center;
+    color:var(--cream-dim);
+    font-size:15px;
+  }
+  .owner-line strong{color:var(--cream);font-weight:600;}
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0;
+    font-size:13px;
+    color:var(--cream-dim);
+  }
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .hero .kicker, .hero h1, .hero p.lede, .hero-actions, .hero-meta{
+      animation:none; opacity:1;
+    }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">Deo Filling Station<span class="small">INDIAN OIL &middot; BERGAON, HATHRAS</span></div>
+    <a class="call-now" href="tel:+919927036826">99270 36826</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="kicker">Bergaon Road, Hathras</div>
+      <h1>A dependable stop, run with care, every day of the year</h1>
+      <p class="lede">Deo Filling Station is the Indian Oil outlet on the Bergaon road, looked after by Sarveer Singh. Fuel, a clean place to pause, and staff who treat you well — with delivery to your door if you can't make it in.</p>
+      <div class="hero-actions">
+        <a class="btn-gold" href="tel:+919927036826">Call the pump</a>
+        <a class="btn-outline" href="#location">Directions</a>
+      </div>
+      <div class="hero-meta">
+        <div class="item"><div class="v">6 AM – 10 PM</div><div class="l">Open daily</div></div>
+        <div class="item"><div class="v">Indian Oil</div><div class="l">Authorised dealer</div></div>
+        <div class="item"><div class="v">Sarveer Singh</div><div class="l">Proprietor</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What you'll find here</h2>
+        <p>Fuel, a few essentials, and service that doesn't feel rushed.</p>
+      </div>
+      <div class="service-rows">
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M4 21V8l5-4 5 4v13"/><path d="M4 21h10"/><path d="M15 11h2a2 2 0 0 1 2 2v3.5a1.5 1.5 0 0 0 3 0V9l-3-3"/><line x1="7" y1="12" x2="11" y2="12"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>Petrol</h3>
+            <p>Indian Oil petrol, measured and billed at the pump, no shortcuts.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M4 21V10l6-5 6 5v11"/><path d="M4 21h12"/><circle cx="17" cy="17" r="3"/><path d="M17 14v-2"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>Diesel</h3>
+            <p>For cars, tractors and commercial vehicles passing through Bergaon.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>Air machine</h3>
+            <p>Tyre pressure checked and topped up for two-wheelers and cars.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M7 21V9a5 5 0 0 1 10 0v12"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>Washroom, men and women</h3>
+            <p>Two separate washrooms, cleaned through the day for anyone on the road.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>RO drinking water</h3>
+            <p>A free water point for drivers and passengers, filtered and cool.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-5.6 6-5.6s6 2.3 6 5.6"/><circle cx="17" cy="9" r="2.6"/><path d="M15.2 14.6c2.7 0.3 4.8 2.3 4.8 5.4"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>Friendly staff</h3>
+            <p>People who greet you properly, answer questions, and don't rush you off.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M4 15c1.5-6 4.5-9 8-9s6.5 3 8 9"/><path d="M2 15h20"/><path d="M6 15v4M18 15v4"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>Good environment</h3>
+            <p>A tidy, well-kept forecourt — no clutter, no mess, easy to pull in and out.</p>
+          </div>
+        </div>
+
+        <div class="service-row">
+          <div class="service-visual">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><rect x="2" y="9" width="12" height="7"/><path d="M14 11h3l4 3v2h-7z"/><circle cx="6.5" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg>
+          </div>
+          <div class="service-copy">
+            <h3>Doorstep delivery</h3>
+            <p>Fuel delivered within 5 km for a flat charge of ₹100. Call ahead to arrange it.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap band-inner">
+      <div class="band-block"><div class="l">Hours</div><div class="v">6:00 AM – 10:00 PM</div></div>
+      <div class="band-block"><div class="l">Days</div><div class="v">Monday to Sunday</div></div>
+      <a class="btn-gold" href="tel:+919927036826">Call ahead</a>
+    </div>
+  </div>
+
+  <section id="location">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Find the pump</h2>
+        <p>On the Bergaon road, Hathras district, Uttar Pradesh.</p>
+      </div>
+      <div class="location-grid">
+        <div class="address-card">
+          <h3>Address</h3>
+          <p>Deo Filling Station<br>Bergaon, Hathras<br>Uttar Pradesh, India</p>
+          <div class="rule left"></div>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bergaon%20Hathras%20Deo%20Filling%20Station" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Bergaon,Hathras,Uttar+Pradesh&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map showing Bergaon, Hathras">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p>Call for tanker orders, bulk diesel, or directions to the pump.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="l">Primary number</div>
+          <a class="phone-link" href="tel:+919927036826">99270 36826</a>
+        </div>
+        <div class="contact-card">
+          <div class="l">Alternate number</div>
+          <a class="phone-link" href="tel:+918791866206">87918 66206</a>
+        </div>
+      </div>
+      <div class="owner-line">Run by <strong>Sarveer Singh</strong> (Pradhan ji) &middot; Indian Oil dealership</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Deo Filling Station, Bergaon, Hathras</span>
+    <span>Indian Oil dealer</span>
+  </div>
+</footer>
+
+</body>
+</html>
